@@ -98,7 +98,227 @@
           </hgroup>
   </slide>
 
-RENDERED_SLIDES
+<slide class=""><hgroup><h2>R - pakiety podstawowe</h2></hgroup><article  id="r---pakiety-podstawowe">
+
+<pre class = 'prettyprint lang-r'>getOption(&quot;defaultPackages&quot;)</pre>
+
+<p>[1] &quot;datasets&quot; &quot;utils&quot; &quot;grDevices&quot; &quot;graphics&quot; &quot;stats&quot; &quot;methods&quot;</p>
+
+</article></slide><slide class=""><hgroup><h2>Podstawowe działania</h2></hgroup><article  id="podstawowe-dziaania">
+
+<pre class = 'prettyprint lang-r'>2 * 2</pre>
+
+<pre >## [1] 4</pre>
+
+<pre class = 'prettyprint lang-r'>10 + 2</pre>
+
+<pre >## [1] 12</pre>
+
+<pre class = 'prettyprint lang-r'>2/45</pre>
+
+<pre >## [1] 0.04444444</pre>
+
+<pre class = 'prettyprint lang-r'>10^6</pre>
+
+<pre >## [1] 1e+06</pre>
+
+<pre class = 'prettyprint lang-r'>(28 + 2) * 3</pre>
+
+<pre >## [1] 90</pre>
+
+</article></slide><slide class=""><hgroup><h2>Operatory logiczne</h2></hgroup><article  id="operatory-logiczne">
+
+<pre class = 'prettyprint lang-r'>4 == 5  # jest równe</pre>
+
+<pre >## [1] FALSE</pre>
+
+<pre class = 'prettyprint lang-r'>4 == 4</pre>
+
+<pre >## [1] TRUE</pre>
+
+<pre class = 'prettyprint lang-r'>4 &lt; 5</pre>
+
+<pre >## [1] TRUE</pre>
+
+<pre class = 'prettyprint lang-r'>4 &gt; 5</pre>
+
+<pre >## [1] FALSE</pre>
+
+<pre class = 'prettyprint lang-r'>4 != 5  # nie jest</pre>
+
+<pre >## [1] TRUE</pre>
+
+<pre class = 'prettyprint lang-r'>2 &amp; 3 &lt; 3  # i</pre>
+
+<pre >## [1] FALSE</pre>
+
+<pre class = 'prettyprint lang-r'>2 | 3 &lt; 3  # lub</pre>
+
+<pre >## [1] TRUE</pre>
+
+</article></slide><slide class=""><hgroup><h2>Przypisywanie zmiennych</h2></hgroup><article  id="przypisywanie-zmiennych">
+
+<pre class = 'prettyprint lang-r'>x &lt;- 4 * pi + 2
+# zerknij
+x</pre>
+
+<pre >## [1] 14.56637</pre>
+
+</article></slide><slide class=""><hgroup><h2>Przypisywanie zmiennych - dłuższe sekwencje</h2></hgroup><article  id="przypisywanie-zmiennych---duzsze-sekwencje">
+
+<pre class = 'prettyprint lang-r'>y &lt;- c(10, 20, 30, 40, 50, 60, 70)
+z &lt;- (1:1000)
+c &lt;- c(&quot;Ala&quot;, &quot;ma&quot;, &quot;kota&quot;)
+# zerknij
+c</pre>
+
+<pre >## [1] &quot;Ala&quot;  &quot;ma&quot;   &quot;kota&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>y</pre>
+
+<pre >## [1] 10 20 30 40 50 60 70</pre>
+
+</article></slide><slide class=""><hgroup><h2>Dostęp do poszczególnych elementów wektora</h2></hgroup><article  id="dostep-do-poszczegolnych-elementow-wektora">
+
+<pre class = 'prettyprint lang-r'>y[2]</pre>
+
+<pre >## [1] 20</pre>
+
+<pre class = 'prettyprint lang-r'>c[3]</pre>
+
+<pre >## [1] &quot;kota&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>y[5:7]</pre>
+
+<pre >## [1] 50 60 70</pre>
+
+</article></slide><slide class=""><hgroup><h2>Podstawowe komendy</h2></hgroup><article  id="podstawowe-komendy">
+
+<ul>
+<li>class(), sort(), rm(), min(), max(), mean(), length(), table(), sample(), sum()</li>
+</ul>
+
+<h3>korzystanie z pomocy, np.</h3>
+
+<pre class = 'prettyprint lang-r'>help(&quot;table&quot;)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 1</h2></hgroup><article  id="zadanie-1">
+
+<h3>Stwórz dowolny wektor (ciąg danych), składający się przynajmniej z 10 liczb i przetestuj działanie komend z porzedniego slajdu.</h3>
+
+<p>Do czego one służą?</p>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 2</h2></hgroup><article  id="zadanie-2">
+
+<p>Załóżmy, że spisujesz przebieg auta za każdym razem gdy je tankujesz. To wyniki ostatnich 8 &quot;spisów&quot;:</p>
+
+<p><strong>65311 65624 65908 66219 66499 66821 67145 67447</strong></p>
+
+<ol>
+<li><p>Zapisz dane w wektorze <em>przebieg</em> i użyj na nim funkcji <em>diff()</em>.<br/>Co otrzymałeś?</p></li>
+<li><p>Użyj funkcji R aby znaleźć największą i najmniejszą liczbę kilometrów, jaką udało Ci się przejechać na jednym tankowaniu</p></li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 2</h2></hgroup><article  id="zadanie-2-1">
+
+<p>a)Zapisz dane w wektorze <em>przebieg</em> i użyj na nim funkcji <em>diff()</em>.<br/>Co otrzymałeś?</p>
+
+<pre class = 'prettyprint lang-r'>przebieg &lt;- c(65311, 65624, 65908, 66219, 66499, 66821, 67145, 
+    67447)
+diff(przebieg)</pre>
+
+<pre >## [1] 313 284 311 280 322 324 302</pre>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 2</h2></hgroup><article  id="zadanie-2-2">
+
+<p>b)Użyj funkcji R aby znaleźć największą i najmniejszą liczbę kilometrów, jaką udało Ci się przejechać na jednym tankowaniu</p>
+
+<pre class = 'prettyprint lang-r'>max(diff(przebieg))</pre>
+
+<pre >## [1] 324</pre>
+
+<pre class = 'prettyprint lang-r'>min(diff(przebieg))</pre>
+
+<pre >## [1] 280</pre>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3">
+
+<p>Załóżmy, że spisujesz czas dojazdów na Morasko. Wynik z ostatnich 10 dni, to:</p>
+
+<p><strong>17 16 20 24 22 15 21 15 17 22</strong></p>
+
+<p>a)Ile średnio zajmowały Ci dojazdy? Jak najszybciej udało Ci się dojechać?</p>
+
+<p>b)24 minuty to błąd. Pwinno być 18, napraw to. Jak zmieniła się średnia?</p>
+
+<p>c)Ile razy dojeżdżałeś dłużej niż 20 minut?</p>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3-1">
+
+<p>a)Ile średnio zajmowały Ci dojazdy? Jak najszybciej udało Ci się dojechać?</p>
+
+<pre class = 'prettyprint lang-r'>dojazdy &lt;- c(17, 16, 20, 24, 22, 15, 21, 15, 17, 22)
+mean(dojazdy)</pre>
+
+<pre >## [1] 18.9</pre>
+
+<p>b)24 minuty to błąd. Pwinno być 18, napraw to. Jak zmieniła się średnia?</p>
+
+<pre class = 'prettyprint lang-r'>dojazdy[4] &lt;- 18
+dojazdy</pre>
+
+<pre >##  [1] 17 16 20 18 22 15 21 15 17 22</pre>
+
+<pre class = 'prettyprint lang-r'>mean(dojazdy)</pre>
+
+<pre >## [1] 18.3</pre>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3-2">
+
+<p>c)Ile razy dojeżdżałeś dłużej niż 20 minut?</p>
+
+<pre class = 'prettyprint lang-r'>sum(dojazdy &gt; 20)</pre>
+
+<pre >## [1] 3</pre>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 4</h2></hgroup><article  id="zadanie-4">
+
+<p>Twoje miesięczne rachunki za telefon to:</p>
+
+<p><strong>46 33 39 37 46 30 48 32 49 35 30 48</strong></p>
+
+<ol>
+<li><p>Ile rocznie wydajesz na telefon?</p></li>
+<li><p>Ile razy wydałeś więcej niż 40zł?</p></li>
+<li><p>Ile to procent całości?</p></li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 4</h2></hgroup><article  id="zadanie-4-1">
+
+<ol>
+<li>Ile rocznie wydajesz na telefon?</li>
+</ol>
+
+<pre class = 'prettyprint lang-r'>rachunki &lt;- c(46, 33, 39, 37, 46, 30, 48, 32, 49, 35, 30, 48)
+sum(rachunki)</pre>
+
+<pre >## [1] 473</pre>
+
+<ol>
+<li>Ile razy wydałeś więcej niż 40zł?</li>
+</ol>
+
+<pre class = 'prettyprint lang-r'>sum(rachunki &gt; 40)</pre>
+
+<pre >## [1] 5</pre>
+
+</article></slide><slide class=""><hgroup><h2>Zadanie 4</h2></hgroup><article  id="zadanie-4-2">
+
+<p>c)Ile to procent całości?</p>
+
+<pre class = 'prettyprint lang-r'>(sum(rachunki &gt; 40)/length(rachunki)) * 100</pre>
+
+<pre >## [1] 41.66667</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
