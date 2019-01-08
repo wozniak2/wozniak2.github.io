@@ -3168,22 +3168,35 @@ if (document.readyState !== "loading" &&
 
 </article></slide><slide class=""><hgroup><h2>Porządkowanie danych</h2></hgroup><article  id="porzadkowanie-danych">
 
-<pre class = 'prettyprint lang-r'># zmieniamy na polskie nazwy
-colnames(Titanic) &lt;- c(&quot;nr&quot;, &quot;imie&quot;, &quot;klasa&quot;, &quot;wiek&quot;, &quot;plec&quot;, 
+<p>Zmieniamy nazwy kolumnm na polskie</p>
+
+<pre class = 'prettyprint lang-r'>colnames(Titanic) &lt;- c(&quot;nr&quot;, &quot;imie&quot;, &quot;klasa&quot;, &quot;wiek&quot;, &quot;plec&quot;, 
     &quot;przezyl&quot;, &quot;kod_plci&quot;)</pre>
 
-</article></slide><slide class=""><hgroup><h2>Pytania</h2></hgroup><article  id="pytania">
+</article></slide><slide class=""><hgroup><h2>Pytania podstawowe</h2></hgroup><article  id="pytania-podstawowe">
 
-<ol>
-<li>Ile bylo pasazerow na titanicu? Jaka była średnia wieku? Jakie jest odchylenie standardowe dla wieku? Ile wynosi 1 i 3 kwartyl dla tej zmiennej? Co to oznacza?</li>
-</ol>
+<p>Ile było pasażerow na Titanicu? Jaka była średnia wieku? Ile wynosi 1 i 3 kwartyl dla tej zmiennej? Co to oznacza?</p>
 
-<pre class = 'prettyprint lang-r'>summary(Titanic$wiek)  ## $-dostęp do kolumn</pre>
+<pre class = 'prettyprint lang-r'>length(Titanic$imie)  ## $-dostęp do kolumn</pre>
+
+<pre >## [1] 1313</pre>
+
+<pre class = 'prettyprint lang-r'>summary(Titanic$wiek)</pre>
 
 <pre >##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
 ##    0.17   21.00   28.00   30.40   39.00   71.00     557</pre>
 
-<pre class = 'prettyprint lang-r'>sd(Titanic$wiek)</pre>
+</article></slide><slide class=""><hgroup><h2>Pytania podstawowe</h2></hgroup><article  id="pytania-podstawowe-1">
+
+<p>Ile jest braków danych w kolumnie &ldquo;wiek&rdquo;? Jakie jest odchylenie standardowe dla wieku?</p>
+
+<pre class = 'prettyprint lang-r'># braki danych
+sum(is.na(Titanic$wiek))</pre>
+
+<pre >## [1] 557</pre>
+
+<pre class = 'prettyprint lang-r'># odchylenie standardowe
+sd(Titanic$wiek)</pre>
 
 <pre >## [1] NA</pre>
 
@@ -3193,24 +3206,29 @@ colnames(Titanic) &lt;- c(&quot;nr&quot;, &quot;imie&quot;, &quot;klasa&quot;, &
 
 </article></slide><slide class=""><hgroup><h2>Struktura pasażerów</h2></hgroup><article  id="struktura-pasazerow">
 
-<pre class = 'prettyprint lang-r'>table(Titanic$plec)  ## tabela częstości</pre>
+<pre class = 'prettyprint lang-r'>## tabela częstości
+table(Titanic$plec)</pre>
 
 <pre >## 
 ## female   male 
 ##    462    851</pre>
 
-<pre class = 'prettyprint lang-r'>sum(Titanic$plec == &quot;male&quot;)  ## inny sposób</pre>
+<pre class = 'prettyprint lang-r'>## inny sposób
+sum(Titanic$plec == &quot;male&quot;)</pre>
 
 <pre >## [1] 851</pre>
 
-<pre class = 'prettyprint lang-r'># Ile bylo dzieci?
-dzieci &lt;- sum(Titanic$wiek &lt; 18, na.rm = TRUE)
-# Ile bylo doroslych?
-dorosli &lt;- sum(Titanic$wiek &gt; 18, na.rm = TRUE)</pre>
-
 </article></slide><slide class=""><hgroup><h2>Struktura pasażerów</h2></hgroup><article  id="struktura-pasazerow-1">
 
-<p>Dzielimy pasazerow na kategorie wiekowe: 0-5, 5-15, 15-30, 30-50, 50-max</p>
+<pre class = 'prettyprint lang-r'>## Ile dzieci było na Titanicu?
+dzieci &lt;- sum(Titanic$wiek &lt; 18, na.rm = TRUE)
+
+## Ile bylo doroslych?
+dorosli &lt;- sum(Titanic$wiek &gt; 18, na.rm = TRUE)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Struktura pasażerów</h2></hgroup><article  id="struktura-pasazerow-2">
+
+<p>Podzielmy pasażerow na kategorie wiekowe: 0-5, 5-15, 15-30, 30-50, 50-max</p>
 
 <pre class = 'prettyprint lang-r'>kat.wiek &lt;- cut(Titanic$wiek, breaks = c(0, 5, 15, 30, 50, 
     max(Titanic$wiek, na.rm = T)))
@@ -3220,9 +3238,9 @@ table(kat.wiek)</pre>
 ##   (0,5]  (5,15] (15,30] (30,50] (50,71] 
 ##      36      37     359     254      70</pre>
 
-</article></slide><slide class=""><hgroup><h2>Struktura pasażerów</h2></hgroup><article  id="struktura-pasazerow-2">
+</article></slide><slide class=""><hgroup><h2>Struktura pasażerów</h2></hgroup><article  id="struktura-pasazerow-3">
 
-<p>Dzielimy pasazerow na kategorie wiekowe: 0-5, 5-15, 15-30, 30-50, 50-max</p>
+<p>Narysujmy wykres słupkowy dla kategorii wiekowych</p>
 
 <pre class = 'prettyprint lang-r'># wykres słupkowy
 barplot(table(kat.wiek), cex.names = 0.75)</pre>
@@ -3231,45 +3249,55 @@ barplot(table(kat.wiek), cex.names = 0.75)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Manipulacja danymi</h2></hgroup><article  id="manipulacja-danymi">
 
-<p>Dwa osobne zbiory danych z meskimi i zenskimi pasazerami Titanica</p>
+<p>Utwórzmy dwa osobne zbiory danych z męskimi i żenskimi pasażerami Titanica</p>
 
-<pre class = 'prettyprint lang-r'>K &lt;- subset(Titanic, Titanic$plec == &quot;female&quot;)
-M &lt;- subset(Titanic, Titanic$plec == &quot;male&quot;)
-## Ile dzieci przetrwalo katastrofę w %?
+<pre class = 'prettyprint lang-r'>## kobiety
+K &lt;- subset(Titanic, Titanic$plec == &quot;female&quot;)
+
+## mężczyźni
+M &lt;- subset(Titanic, Titanic$plec == &quot;male&quot;)</pre>
+
+</article></slide><slide class=""><hgroup><h2>Manipulacja danymi</h2></hgroup><article  id="manipulacja-danymi-1">
+
+<p>Ile dzieci i ilu dorosłych przetrwalo katastrofę Titanica (w %)?</p>
+
+</article></slide><slide class=""><hgroup><h2>Manipulacja danymi</h2></hgroup><article  id="manipulacja-danymi-2">
+
+<p>Ile dzieci i ilu dorosłych przetrwalo katastrofę Titanica (w %)?</p>
+
+<pre class = 'prettyprint lang-r'># dzieci
 sum(Titanic$wiek &lt; 18 &amp; Titanic$przezyl == 1, na.rm = TRUE)/dzieci * 
     100</pre>
 
 <pre >## [1] 60.41667</pre>
 
-<pre class = 'prettyprint lang-r'># Ile doroslych przetrwalo w %?
+<pre class = 'prettyprint lang-r'># dorośli
 sum(Titanic$wiek &gt; 18 &amp; Titanic$przezyl == 1, na.rm = TRUE)/dorosli * 
     100</pre>
 
 <pre >## [1] 38.73016</pre>
 
-</article></slide><slide class=""><hgroup><h2>Manipulacja danymi</h2></hgroup><article  id="manipulacja-danymi-1">
+</article></slide><slide class=""><hgroup><h2>Manipulacja danymi</h2></hgroup><article  id="manipulacja-danymi-3">
 
-<p>Dwa osobne zbiory danych z meskimi i zenskimi pasazerami Titanica</p>
+<p>Jak nazywała się najmłodsza pasażerka i najstarszy pasażer Titanica?</p>
 
-<pre class = 'prettyprint lang-r'>K &lt;- subset(Titanic, Titanic$plec == &quot;female&quot;)
-M &lt;- subset(Titanic, Titanic$plec == &quot;male&quot;)
-## Jak nazywala sie najmlodsza pasazerka Titanica
+<pre class = 'prettyprint lang-r'>## najmłodsza pasażerka
 K$imie[which.min(K$wiek)]</pre>
 
 <pre >## [1] &quot;Dean, Miss Elizabeth Gladys (Millvena)&quot;</pre>
 
-<pre class = 'prettyprint lang-r'>## A najsztarszy pasażer?
+<pre class = 'prettyprint lang-r'>## najstarszy pasażer
 M$imie[which.max(K$wiek)]</pre>
 
 <pre >## [1] &quot;Cavendish, Mr Tyrell William&quot;</pre>
 
 </article></slide><slide class=""><hgroup><h2>Rozkład zmiennych</h2></hgroup><article  id="rozkad-zmiennych">
 
-<p>Narysuj histogram wieku pasażerów Titanica. Dodaj średnią, medianę i legendę. Co możesz powiedzieć?</p>
+<p>Narysuj histogram wieku pasażerów Titanica. Dodaj dwie pionowe linie - średnią i medianę. Dorysuj legendę i zinterpretuj wykres.</p>
 
 </article></slide><slide class=""><hgroup><h2>Rozkład zmiennych</h2></hgroup><article  id="rozkad-zmiennych-1">
 
-<p>Narysuj histogram wieku pasażerów Titanica. Dodaj średnią, medianę i legendę. Co możesz powiedzieć?</p>
+<p>Narysuj histogram wieku pasażerów Titanica. Dodaj dwie pionowe linie - średnią i medianę. Dorysuj legendę i zinterpretuj wykres.</p>
 
 <pre class = 'prettyprint lang-r'>hist(Titanic$wiek, col = &quot;gainsboro&quot;)
 abline(v = mean(Titanic$wiek, na.rm = T), col = &quot;coral&quot;, lwd = 2)
