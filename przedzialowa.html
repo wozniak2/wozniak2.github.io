@@ -3295,7 +3295,7 @@ UCL &lt;- P.hat + z * sqrt(P.hat * (1 - P.hat)/n)</pre>
 
 <pre class = 'prettyprint lang-r'>mean((p &gt;= LCL) &amp; (p &lt;= UCL))</pre>
 
-<pre >## [1] 0.92639</pre>
+<pre >## [1] 0.92718</pre>
 
 </article></slide><slide class=""><hgroup><h2>ZADANIE DOMOWE</h2></hgroup><article  id="zadanie-domowe">
 
@@ -3303,7 +3303,25 @@ UCL &lt;- P.hat + z * sqrt(P.hat * (1 - P.hat)/n)</pre>
 
 <p>Utwórz 80% przedział ufności dla zdarzenia jakim jest fakt napotkania kierowcy, z zapiętymi pasami podczas wyrywkowej kontroli.</p>
 
-<p>Zapisz odpowiedz (co oznaczaja otrzymane przez Ciebie wyniki?)</p></article></slide>
+<p>Zapisz odpowiedz (co oznaczaja otrzymane przez Ciebie wyniki?)</p>
+
+</article></slide><slide class=""><hgroup><h2>ZADANIE DOMOWE</h2></hgroup><article  id="zadanie-domowe-1">
+
+<p>Przedziały ufności</p>
+
+<pre class = 'prettyprint lang-r'># Przedziały ufności
+p.hat &lt;- 320/400
+n &lt;- 400
+z &lt;- qnorm(0.9)
+# dół:
+p.hat - z * sqrt(p.hat * (1 - p.hat)/n)</pre>
+
+<pre >## [1] 0.774369</pre>
+
+<pre class = 'prettyprint lang-r'># góra:
+p.hat + z * sqrt(p.hat * (1 - p.hat)/n)</pre>
+
+<pre >## [1] 0.825631</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
