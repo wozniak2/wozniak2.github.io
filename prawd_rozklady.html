@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>rozklady zmiennej losowej</title>
+  <title>Rozkłady zmiennej losowej</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,7 +10,6 @@
 
 
 
-  <meta name="date" content="2018-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,7 +20,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'rozklady zmiennej losowej',
+                title: 'Rozkłady zmiennej losowej',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -3076,6 +3075,10 @@ if (document.readyState !== "loading" &&
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -3107,7 +3110,6 @@ if (document.readyState !== "loading" &&
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">November 25, 2018</p>
           </hgroup>
   </slide>
 
@@ -3134,7 +3136,9 @@ if (document.readyState !== "loading" &&
 
 </article></slide><slide class=""><hgroup><h2>Rozkład dwumianowy</h2></hgroup><article  id="rozkad-dwumianowy">
 
-<p>###<strong>Rozkład dwumianowy</strong> to dyskretny rozkład prawdopodobieństwa opisujący liczbę sukcesów w ciągu niezależnych prób, z których każda ma stałe prawdopodobieństwo sukcesu.</p>
+<h3><strong>Rozkład dwumianowy</strong></h3>
+
+<p>to dyskretny rozkład prawdopodobieństwa opisujący liczbę sukcesów w ciągu niezależnych prób, z których każda ma stałe prawdopodobieństwo sukcesu.</p>
 
 <h3><strong>Przykłady</strong>:</h3>
 
@@ -3210,7 +3214,7 @@ pbinom(q=3, size=6, prob=0.5)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3-1">
 
-<p>Rzucamy 1000 razy symetryczną monetą, a rezultaty zapisujemy w wektorze &ldquo;moneta&rdquo;. Ile razy wypada orzeł?</p>
+<p>Rzucamy 1000 razy symetryczną monetą, a rezultaty zapisujemy w liście &ldquo;moneta&rdquo;. Ile razy wypada orzeł?</p>
 
 <ul>
 <li>Sposób pierwszy (rbinom)</li>
@@ -3226,11 +3230,11 @@ table(moneta)</pre>
 
 <pre >## moneta
 ##   0   1 
-## 493 507</pre>
+## 488 512</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3-2">
 
-<p>Rzucamy 1000 razy symetryczną monetą, a rezultaty zapisz w wektorze &ldquo;moneta&rdquo;. Ile razy wypadł orzeł?</p>
+<p>Rzucamy 1000 razy symetryczną monetą, a rezultaty zapisz w liście &ldquo;moneta&rdquo;. Ile razy wypadł orzeł?</p>
 
 <ul>
 <li>Sposób drugi (sample)</li>
@@ -3238,7 +3242,7 @@ table(moneta)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3-3">
 
-<p>Rzucamy 1000 razy symetryczną monetą, a rezultaty zapisz w wektorze &ldquo;moneta&rdquo;. Ile razy wypadł orzeł?</p>
+<p>Rzucamy 1000 razy symetryczną monetą, a rezultaty zapisz w liście &ldquo;moneta&rdquo;. Ile razy wypadł orzeł?</p>
 
 <ul>
 <li>Sposób drugi (sample)</li>
@@ -3251,11 +3255,11 @@ table(moneta)</pre>
 
 <pre >## moneta
 ##  orzel reszka 
-##    528    472</pre>
+##    519    481</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 4</h2></hgroup><article  id="zadanie-4">
 
-<p>Narysuj funkcje rozkladu prawdopodobienstwa wypadniecia orla w 100 rzutach moneta</p>
+<p>Narysuj funkcje rozkladu (gęstości) prawdopodobienstwa wypadniecia orla w 100 rzutach moneta</p>
 
 <pre class = 'prettyprint lang-r'>rozkl_dwumianowy &lt;- dbinom(1:100, size=100, prob=0.5)
 plot(rozkl_dwumianowy)</pre>
@@ -3264,7 +3268,7 @@ plot(rozkl_dwumianowy)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 4 - cd</h2></hgroup><article  id="zadanie-4---cd">
 
-<p>Narysuj funkcje rozkladu prawdopodobienstwa wypadniecia orla w 100 rzutach moneta - opcje wykresu.</p>
+<p>Narysuj funkcje rozkladu (gęstości) prawdopodobienstwa wypadniecia orla w 100 rzutach moneta - opcje wykresu.</p>
 
 <pre class = 'prettyprint lang-r'>help(plot)
 rozklad &lt;- dbinom(1:100, size=100, prob=0.5)
@@ -3285,7 +3289,10 @@ plot(dystrybuanta, main=&quot;Dystrybuanta&quot;,
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 6</h2></hgroup><article  id="zadanie-6">
 
-<p>Narysuj dystrybuante dla prawdopodobienstwa wypadniecia orla podczas 100 rzutow symetryczna moneta. Grubosc linii = 2, typ wykresu = kola i linia</p>
+<ul>
+<li>Narysuj dystrybuante dla prawdopodobienstwa wypadniecia orla podczas 100 rzutow symetryczna moneta.</li>
+<li>Grubosc linii = 2, typ wykresu = kola i linia</li>
+</ul>
 
 <pre class = 'prettyprint lang-r'>dystrybuanta &lt;- pbinom(1:100, size=100, prob=0.5)
 plot(dystrybuanta, main=&quot;Dystrybuanta&quot;, 
@@ -3327,6 +3334,8 @@ dbinom(20, size=60, prob=0.5)</pre>
 
 <pre >## [1] 0.1025782</pre>
 
+</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-2">
+
 <pre class = 'prettyprint lang-r'># mniej niz 20 razy
 pbinom(20, 60, 0.5)</pre>
 
@@ -3337,7 +3346,7 @@ pbinom(30, 60, 0.5) - (pbinom(20, 60, 0.5))</pre>
 
 <pre >## [1] 0.5445444</pre>
 
-</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-2">
+</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-3">
 
 <p>2.Wyobraz sobie, ze na zaliczenie ze statystyki masz test skladajacy sie z 12 pytan. Kazde pytanie sklada sie z 5 mozliwych odpowiedzi, z ktorych tylko jedna jest poprawna. Jakie jest prawdopodobienstwo poprawnego trafienia 4 lub mniej pytan?</p>
 
@@ -3345,7 +3354,7 @@ pbinom(30, 60, 0.5) - (pbinom(20, 60, 0.5))</pre>
 
 <pre >## [1] 0.1328756</pre>
 
-</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-3">
+</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-4">
 
 <p>3.Narysuj funkcję gęstości (rozkładu) prawdopodobieństwa oraz dystrybuante dla rozkładu Poissona oraz Studenta. Jakie są zastosowania rozkładów?</p>
 
@@ -3355,7 +3364,7 @@ plot(dpois(1:40, lambda=20))</pre>
 
 <p><img src="data:image/png;base64,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" width="384" /></p>
 
-</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-4">
+</article></slide><slide class=""><hgroup><h2>Zadanie domowe</h2></hgroup><article  id="zadanie-domowe-5">
 
 <p>3.Narysuj funkcję gęstości (rozkładu) prawdopodobieństwa oraz dystrybuante dla rozkładu Poissona oraz Studenta. Jakie są zastosowania rozkładów?</p>
 
@@ -3367,7 +3376,9 @@ plot(dt(-15:15, df=2))</pre>
 
 </article></slide><slide class=""><hgroup><h2>Poisson i Student - zastosowanie:</h2></hgroup><article  id="poisson-i-student---zastosowanie">
 
-<p>###<a href='https://pl.wikipedia.org/wiki/Rozkład_Studenta' title=''>Student</a> ###<a href='https://pl.wikipedia.org/wiki/Rozkład_Poissona' title=''>Poisson</a></p>
+<h3><a href='https://pl.wikipedia.org/wiki/Rozkład_Studenta' title=''>Student</a></h3>
+
+<h3><a href='https://pl.wikipedia.org/wiki/Rozkład_Poissona' title=''>Poisson</a></h3>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Prawdopodobieństwo - proste symulacje</h2></hgroup><article  id="prawdopodobienstwo---proste-symulacje">
 
@@ -3385,35 +3396,45 @@ plot(dt(-15:15, df=2))</pre>
 
 </article></slide><slide class=""><hgroup><h2>Ćwiczenie 1</h2></hgroup><article  id="cwiczenie-1">
 
-<h3>Stwórz funkcję, która będzie symulować dowolną liczbę rzutów symetryczną, sześciościenną kostką do gry</h3>
+<ul>
+<li>Stwórz funkcję, która będzie symulować dowolną liczbę rzutów symetryczną, sześciościenną kostką do gry</li>
+</ul>
 
 <pre class = 'prettyprint lang-r'>rzuc.koscia &lt;- function(n) sample(1:6, n, rep = TRUE)
 # sprawdzamy czy dziala - rzucamy 500 razy
 rzuc.koscia(500)</pre>
 
-<pre >##   [1] 2 6 3 6 5 2 1 6 4 6 5 1 5 3 3 1 6 6 2 6 3 1 2 4 4 2 4 2 6 5 2 2 6 4 1
-##  [36] 4 6 4 6 1 5 6 6 6 1 5 1 5 6 1 3 4 1 1 4 2 3 5 6 3 4 1 5 2 2 4 3 4 3 2
-##  [71] 3 2 3 3 4 2 5 4 1 3 6 1 3 3 5 2 2 2 6 1 1 2 6 1 2 6 6 6 5 2 5 6 6 3 2
-## [106] 1 3 6 2 4 1 2 6 5 4 4 1 6 2 2 5 6 4 2 1 5 2 6 6 3 2 6 4 2 3 3 6 3 1 3
-## [141] 2 2 6 5 3 2 1 5 6 6 1 4 1 5 2 3 4 6 4 4 2 3 2 3 3 4 5 3 1 4 5 4 3 4 2
-## [176] 6 1 6 5 4 4 3 1 4 1 1 6 1 3 1 6 2 5 6 4 6 2 4 6 1 5 6 1 5 1 6 1 1 4 3
-## [211] 3 5 2 6 1 2 2 5 3 3 6 5 2 6 1 3 4 3 5 2 4 6 2 2 5 5 5 6 2 4 3 2 5 4 3
-## [246] 2 3 5 1 5 6 1 6 6 4 5 1 6 6 1 3 4 4 1 6 5 4 3 2 4 6 4 6 5 3 1 6 5 5 5
-## [281] 6 5 1 2 1 4 4 5 2 4 2 2 3 6 6 2 5 5 4 2 3 6 6 3 6 3 2 4 1 1 3 6 2 6 2
-## [316] 5 6 6 6 3 6 3 2 1 4 4 1 3 3 6 4 5 3 2 6 2 1 3 1 1 1 6 2 6 5 3 3 4 3 1
-## [351] 1 3 5 4 2 3 6 2 2 4 4 2 6 1 2 3 6 6 3 1 4 6 6 4 2 5 1 2 1 4 5 1 6 6 5
-## [386] 5 6 2 2 2 5 5 5 1 3 2 2 3 2 2 1 3 4 6 2 6 2 4 5 6 2 1 2 4 5 3 4 2 3 6
-## [421] 3 1 5 5 4 1 4 2 4 2 5 2 3 4 4 2 1 2 6 5 6 2 4 5 5 2 1 6 5 5 1 3 3 2 2
-## [456] 6 3 1 5 2 2 6 5 5 5 1 4 3 5 3 6 1 6 5 1 5 4 4 5 4 2 6 5 1 6 1 5 1 3 2
-## [491] 1 3 3 3 4 1 4 5 4 1</pre>
+<pre >##   [1] 3 4 6 3 3 4 6 2 1 3 4 2 5 5 1 1 1 1 1 5 2 3 3 1 3 1 3 3 4 2 2 6 6 6 6
+##  [36] 2 1 1 5 5 1 6 1 4 3 6 1 6 3 3 3 2 1 3 2 1 4 6 4 3 6 6 6 4 5 4 6 4 3 5
+##  [71] 5 2 4 3 5 6 6 1 3 2 3 2 6 4 4 5 4 6 2 4 5 2 1 5 6 6 2 3 1 1 5 1 5 4 3
+## [106] 1 5 6 6 5 2 4 1 4 5 2 2 5 6 4 2 2 5 5 6 2 3 6 2 3 5 5 6 5 4 5 6 1 1 5
+## [141] 1 2 6 4 1 5 4 2 2 1 5 6 4 3 4 3 4 3 6 4 5 1 1 1 1 5 1 6 5 3 4 6 6 1 5
+## [176] 6 1 3 2 4 6 4 6 4 3 4 4 6 1 2 1 1 6 5 5 3 1 3 6 1 6 5 5 6 5 5 2 1 2 4
+## [211] 2 1 6 6 5 1 2 4 2 3 6 5 4 1 1 6 2 6 3 2 3 5 4 4 2 1 3 6 4 5 5 1 1 3 3
+## [246] 4 4 6 1 1 4 2 4 3 2 6 1 3 1 6 2 2 6 4 5 3 2 6 3 4 2 4 1 6 2 6 6 2 4 2
+## [281] 6 4 1 3 3 2 6 6 4 4 6 2 1 3 3 3 6 2 5 3 6 1 2 3 2 6 4 3 1 4 3 2 3 6 4
+## [316] 1 1 6 3 1 1 4 4 4 1 6 6 3 5 6 4 6 3 2 3 2 3 3 1 1 6 2 2 2 2 2 2 3 1 2
+## [351] 1 2 4 4 4 4 4 4 3 2 1 3 1 5 1 2 1 6 2 5 3 3 5 1 5 5 2 2 6 1 5 5 1 5 5
+## [386] 1 3 5 3 1 6 1 3 1 4 2 2 1 6 5 6 3 2 5 3 6 5 5 6 6 2 5 4 5 6 1 3 2 6 3
+## [421] 5 5 3 4 4 4 1 5 1 4 5 6 6 4 2 2 3 3 6 3 2 1 3 1 6 1 1 4 1 5 6 6 6 4 2
+## [456] 4 6 5 4 5 5 3 5 5 6 3 1 5 5 3 1 3 6 3 2 3 3 4 5 5 1 1 6 5 4 2 4 5 5 2
+## [491] 5 6 3 3 3 5 4 3 3 3</pre>
 
 </article></slide><slide class=""><hgroup><h2>Ćwiczenie 2</h2></hgroup><article  id="cwiczenie-2">
 
-<p>Stworz funkcje, ktora symulowac bedzie rzut moneta - uzyj polecenia <em>sample</em>.<br/>Następnie rzuć moneta 500 razy, a wyniki zapisz w wekotrze <em>moneta</em>.<br/>Sprawdż ile razy wypadł orzeł a ile reszka.</p>
+<ul>
+<li>Stworz funkcje, ktora symulowac bedzie rzut moneta - uzyj polecenia <em>sample</em>.<br/></li>
+<li>Następnie rzuć moneta 500 razy, a wyniki zapisz w wekotrze <em>moneta</em>.<br/></li>
+<li>Sprawdż ile razy wypadł orzeł a ile reszka.</li>
+</ul>
 
 </article></slide><slide class=""><hgroup><h2>Ćwiczenie 2</h2></hgroup><article  id="cwiczenie-2-1">
 
-<p>Stworz funkcje, ktora symulowac bedzie rzut moneta - uzyj polecenia <em>sample</em>.<br/>Następnie rzuć moneta 500 razy, a wyniki zapisz w wekotrze <em>moneta</em>.<br/>Sprawdż ile razy wypadł orzeł a ile reszka.</p>
+<ul>
+<li>Stworz funkcje, ktora symulowac bedzie rzut moneta - uzyj polecenia <em>sample</em>.<br/></li>
+<li>Następnie rzuć moneta 500 razy, a wyniki zapisz w wekotrze <em>moneta</em>.<br/></li>
+<li>Sprawdż ile razy wypadł orzeł a ile reszka.</li>
+</ul>
 
 <pre class = 'prettyprint lang-r'>rzuc.moneta &lt;- function(n) sample(c(&quot;orzel&quot;, &quot;reszka&quot;), 
                                   n, rep = T)
@@ -3424,7 +3445,7 @@ table(moneta)</pre>
 
 <pre >## moneta
 ##  orzel reszka 
-##    227    273</pre>
+##    248    252</pre>
 
 </article></slide><slide class=""><hgroup><h2>Polecenie <strong>for</strong> - tworzenie pętli warunkowych</h2></hgroup><article  id="polecenie-for---tworzenie-petli-warunkowych">
 
@@ -3504,13 +3525,13 @@ for (i in 1:1000000) {
 
 <pre >## moneta1
 ##  orzel reszka 
-##      2      8</pre>
+##      4      6</pre>
 
 <pre class = 'prettyprint lang-r'>table(moneta2)</pre>
 
 <pre >## moneta2
 ##  orzel reszka 
-## 499870 500130</pre>
+## 500248 499752</pre>
 
 </article></slide><slide class=""><hgroup><h2>Prawo dużych liczb</h2></hgroup><article  id="prawo-duzych-liczb">
 
