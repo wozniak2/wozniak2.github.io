@@ -3235,7 +3235,7 @@ table(moneta)</pre>
 
 <pre >## moneta
 ##   0   1 
-## 493 507</pre>
+## 504 496</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 3</h2></hgroup><article  id="zadanie-3-2">
 
@@ -3260,7 +3260,7 @@ table(moneta)</pre>
 
 <pre >## moneta
 ##  orzel reszka 
-##    478    522</pre>
+##    514    486</pre>
 
 </article></slide><slide class=""><hgroup><h2>Zadanie 4</h2></hgroup><article  id="zadanie-4">
 
@@ -3405,31 +3405,37 @@ plot(dt(-15:15, df=2))</pre>
 <li>Stwórz funkcję, która będzie symulować dowolną liczbę rzutów symetryczną, sześciościenną kostką do gry</li>
 </ul>
 
+</article></slide><slide class=""><hgroup><h2>Ćwiczenie 1</h2></hgroup><article  id="cwiczenie-1-1">
+
+<ul>
+<li>Stwórz funkcję, która będzie symulować dowolną liczbę rzutów symetryczną, sześciościenną kostką do gry</li>
+</ul>
+
 <pre class = 'prettyprint lang-r'>rzuc.koscia &lt;- function(n) sample(1:6, n, rep = TRUE)
 # sprawdzamy czy dziala - rzucamy 500 razy
 rzuc.koscia(500)</pre>
 
-<pre >##   [1] 6 2 5 1 2 3 6 4 4 4 6 1 3 2 1 5 5 4 1 4 2 3 3 6 3 3 1 4 1 1 4 6 3 6 4
-##  [36] 5 1 5 5 6 2 1 1 3 6 3 2 4 4 4 5 6 3 6 3 3 1 1 4 6 6 5 5 1 6 1 1 6 4 2
-##  [71] 3 4 4 6 6 3 1 6 3 1 6 2 1 1 4 4 6 2 1 4 4 4 4 5 6 2 2 6 3 1 6 3 2 1 3
-## [106] 6 2 5 2 4 4 3 4 4 2 3 2 4 1 2 3 5 3 5 5 2 1 5 2 6 1 3 6 2 4 6 3 6 3 1
-## [141] 5 4 6 5 2 5 3 1 2 4 1 2 5 3 6 4 1 5 6 6 2 3 2 4 1 2 1 1 3 1 6 5 1 4 1
-## [176] 3 2 4 1 6 5 4 3 3 6 6 3 4 5 4 6 6 4 2 1 6 3 3 6 1 5 4 5 1 5 4 6 2 3 3
-## [211] 5 3 6 2 4 5 4 1 5 1 2 5 1 6 1 5 2 2 2 3 1 6 1 1 1 6 1 2 2 3 6 5 3 4 1
-## [246] 1 2 4 1 4 1 5 6 3 1 5 5 5 5 3 1 2 1 2 2 6 6 2 2 5 5 6 2 1 1 4 2 1 1 2
-## [281] 1 6 4 6 4 1 5 4 3 5 4 2 2 5 2 5 6 2 4 2 4 6 6 6 1 5 2 3 2 3 3 2 5 2 1
-## [316] 6 5 6 2 2 6 3 5 4 3 4 6 6 1 6 2 2 4 6 6 1 1 3 5 4 1 6 6 2 4 3 2 3 4 5
-## [351] 5 4 2 1 5 6 3 5 4 1 5 5 4 4 4 3 1 2 5 1 1 4 3 3 6 5 5 4 2 4 4 3 6 6 4
-## [386] 3 1 5 5 2 6 4 1 3 5 6 2 3 4 4 3 4 3 4 3 6 6 2 4 1 1 3 6 2 2 6 3 3 4 3
-## [421] 4 3 1 2 1 3 4 5 5 4 2 2 1 3 1 5 1 5 2 6 4 5 6 2 1 2 6 2 4 2 1 2 1 3 2
-## [456] 1 1 3 1 2 3 5 6 6 6 4 1 4 4 3 4 2 5 5 6 5 2 3 1 2 1 1 3 4 2 1 2 1 5 5
-## [491] 5 6 1 2 1 6 1 5 2 2</pre>
+<pre >##   [1] 2 3 1 4 6 3 1 6 1 6 1 6 1 6 3 1 6 3 4 5 5 3 2 2 1 5 4 3 6 3 6 2 1 6 4
+##  [36] 4 4 3 1 6 5 4 4 5 5 2 2 6 5 6 5 6 2 5 3 4 6 4 1 1 5 5 6 1 6 4 5 3 4 2
+##  [71] 1 4 6 2 2 4 1 4 4 6 4 4 1 3 1 2 3 3 1 4 5 2 1 3 3 4 4 3 4 4 6 6 3 6 6
+## [106] 2 2 4 6 1 3 4 2 5 3 5 1 4 1 3 5 3 2 6 1 3 3 5 5 4 3 2 3 3 1 1 5 5 2 6
+## [141] 3 2 2 4 4 3 4 2 6 4 4 6 2 2 5 5 2 2 1 1 1 1 1 6 6 3 2 1 2 2 5 2 4 2 4
+## [176] 4 3 2 5 6 5 4 6 2 1 2 6 2 2 4 6 2 6 3 4 6 3 6 2 6 5 4 4 3 1 4 6 6 3 4
+## [211] 5 1 1 4 2 1 5 3 5 3 1 5 5 3 6 5 6 6 1 1 2 5 4 2 5 1 3 1 6 1 6 3 6 2 1
+## [246] 1 4 3 4 2 1 6 2 1 6 1 6 3 6 3 1 6 4 5 5 1 2 2 4 2 1 5 4 5 5 6 4 5 6 4
+## [281] 5 4 6 2 4 3 3 5 5 2 2 6 3 5 6 3 1 3 1 5 2 1 4 6 5 5 2 2 3 1 4 5 4 1 6
+## [316] 2 2 2 1 1 6 4 6 5 4 6 6 3 1 6 1 2 6 3 2 2 6 1 6 2 4 3 3 2 6 6 2 3 2 6
+## [351] 2 1 6 5 5 4 2 5 2 1 5 1 5 5 4 2 1 1 5 1 4 3 4 1 6 1 3 4 3 2 5 5 2 2 4
+## [386] 3 4 4 3 4 1 5 3 5 3 6 3 2 5 3 2 1 4 1 1 2 5 5 3 2 1 4 1 1 6 4 5 5 2 3
+## [421] 3 4 5 3 6 1 5 6 4 2 5 1 5 6 2 6 1 6 1 4 2 5 5 1 3 1 1 2 5 1 5 4 3 3 3
+## [456] 4 6 6 3 6 1 6 1 1 1 4 3 6 6 2 1 5 6 1 5 3 4 4 2 5 3 5 6 5 6 5 1 2 2 5
+## [491] 2 5 3 1 2 3 2 2 3 5</pre>
 
 </article></slide><slide class=""><hgroup><h2>Ćwiczenie 2</h2></hgroup><article  id="cwiczenie-2">
 
 <ul>
 <li>Stworz funkcje, ktora symulowac bedzie rzut moneta - uzyj polecenia <em>sample</em>.<br/></li>
-<li>Następnie rzuć moneta 500 razy, a wyniki zapisz w wekotrze <em>moneta</em>.<br/></li>
+<li>Następnie rzuć moneta 500 razy, a wyniki zapisz w obiekcie <em>moneta</em>.<br/></li>
 <li>Sprawdż ile razy wypadł orzeł a ile reszka.</li>
 </ul>
 
@@ -3437,7 +3443,7 @@ rzuc.koscia(500)</pre>
 
 <ul>
 <li>Stworz funkcje, ktora symulowac bedzie rzut moneta - uzyj polecenia <em>sample</em>.<br/></li>
-<li>Następnie rzuć moneta 500 razy, a wyniki zapisz w wekotrze <em>moneta</em>.<br/></li>
+<li>Następnie rzuć moneta 500 razy, a wyniki zapisz w obiekcie <em>moneta</em>.<br/></li>
 <li>Sprawdż ile razy wypadł orzeł a ile reszka.</li>
 </ul>
 
@@ -3453,6 +3459,10 @@ table(moneta)</pre>
 ##    241    259</pre>
 
 </article></slide><slide class=""><hgroup><h2>Polecenie <strong>for</strong> - tworzenie pętli</h2></hgroup><article  id="polecenie-for---tworzenie-petli">
+
+<p>Polecenie <em>for</em> powtarza wykonywanie pewnej czynnosci dopóty, dopóki zadany warunek jest prawdziwy<br/><em>for (warunek) {czynnosc}</em></p>
+
+</article></slide><slide class=""><hgroup><h2>Polecenie <strong>for</strong> - tworzenie pętli</h2></hgroup><article  id="polecenie-for---tworzenie-petli-1">
 
 <p>Polecenie <em>for</em> powtarza wykonywanie pewnej czynnosci dopóty, dopóki zadany warunek jest prawdziwy<br/><em>for (warunek) {czynnosc}</em></p>
 
@@ -3487,6 +3497,14 @@ table(moneta)</pre>
 
 <pre class = 'prettyprint lang-r'># tworzymy puste wektory
 kostka1 &lt;- NULL
+kostka2 &lt;- NULL</pre>
+
+</article></slide><slide class=""><hgroup><h2>Ćwiczenie 3</h2></hgroup><article  id="cwiczenie-3-1">
+
+<p>Z wykorzystaniem <em>for</em> rzucamy 20 razy dwoma kostkami jednocześnie i zapisujemy wyniki eksperymentu.</p>
+
+<pre class = 'prettyprint lang-r'># tworzymy puste wektory
+kostka1 &lt;- NULL
 kostka2 &lt;- NULL
 
 # rzucamy kostkami 20 razy - funkcje *rzuc.koscia* opracowaliśmy wcześniej 
@@ -3502,11 +3520,11 @@ sum(kostka1==kostka2)</pre>
 
 </article></slide><slide class=""><hgroup><h2>Ćwiczenie 4</h2></hgroup><article  id="cwiczenie-4">
 
-<p>1.Z wykorzystaniem polecenie &ldquo;for&rdquo;, przeprowadz symulacje rzutu moneta 10 i 100000 razy, a rezultaty kazdego rzutu zapisz odpowiednio w wektorach moneta1 i moneta2.</p>
+<p>1.Z wykorzystaniem polecenia &ldquo;for&rdquo;, przeprowadź symulację rzutu moneta 10 i 100000 razy, a rezultaty każdego rzutu zapisz odpowiednio w obiektach moneta1 i moneta2.</p>
 
 <p>2.Jaka jest oczekiwana liczba orłów (sukcesów) w każdej z tych prób?</p>
 
-<p>3.Porownaj wyniki obu rzutow - w jaki sposob rezultaty sie roznia? Dlaczego?</p>
+<p>3.Porównaj wyniki obu rzutów - w jaki sposob rezultaty sie różnia? Dlaczego?</p>
 
 </article></slide><slide class=""><hgroup><h2>Ćwiczenie 4</h2></hgroup><article  id="cwiczenie-4-1">
 
@@ -3530,19 +3548,19 @@ for (i in 1:1000000) {
 
 <pre >## moneta1
 ##  orzel reszka 
-##      4      6</pre>
+##      5      5</pre>
 
 <pre class = 'prettyprint lang-r'>table(moneta2)</pre>
 
 <pre >## moneta2
 ##  orzel reszka 
-## 499681 500319</pre>
+## 500141 499859</pre>
 
 </article></slide><slide class=""><hgroup><h2>Prawo dużych liczb</h2></hgroup><article  id="prawo-duzych-liczb">
 
 <ul>
-<li>Przy duzej liczbie powtorzen srednia z obserwacji zbliza sie do sredniej oczekiwanej (teoretycznej);<br/></li>
-<li>Wartosc liczbowa sredniej arytmetycznej z proby losowej jest tym lepszym oszacowaniem wartosci sredniej w zbiorowosci generalnej, zwanej wartoscia oczekiwana, im liczebnosc proby losowej jest wieksza.</li>
+<li>Przy dużej liczbie powtórzeń średnia z obserwacji zbliża sie do sredniej oczekiwanej (teoretycznej);<br/></li>
+<li>Wartość liczbowa sredniej arytmetycznej z próby losowej jest tym lepszym oszacowaniem wartości średniej w zbiorowości generalnej, zwanej wartością oczekiwaną, im liczebność proby losowej jest wieksza.</li>
 </ul></article></slide>
 
 
