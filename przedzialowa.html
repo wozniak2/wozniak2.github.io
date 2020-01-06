@@ -4,7 +4,6 @@
   <title>Estymacja przedziałowa</title>
 
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="generator" content="pandoc" />
 
@@ -258,7 +257,6 @@ background: black;
 }
 
 slides > slide {
-display: none;
 font-family: 'Open Sans', Arial, sans-serif;
 font-size: 26px;
 color: #797979;
@@ -279,17 +277,19 @@ transition: all 0.6s ease-in-out;
 }
 
 slides > slide.far-past {
-display: none;
 }
 
 slides > slide.past {
-display: block;
 opacity: 0;
 }
 
 slides > slide.current {
 display: block;
 opacity: 1;
+z-index: 1;
+}
+slides > slide:not(.current) {
+z-index: 0;
 }
 
 slides > slide.current .auto-fadein {
@@ -304,13 +304,11 @@ background-size: 100% 100%;
 }
 
 slides > slide.next {
-display: block;
 opacity: 0;
 pointer-events: none;
 }
 
 slides > slide.far-next {
-display: none;
 }
 
 slides > slide.dark {
@@ -382,8 +380,6 @@ width: 1100px;
 
 slides.layout-widescreen > slide.far-past,
 slides.layout-faux-widescreen > slide.far-past {
-display: block;
-display: none;
 -webkit-transform: translate(-2260px);
 -moz-transform: translate(-2260px);
 -ms-transform: translate(-2260px);
@@ -417,8 +413,6 @@ pointer-events: none;
 
 slides.layout-widescreen > slide.far-next,
 slides.layout-faux-widescreen > slide.far-next {
-display: block;
-display: none;
 -webkit-transform: translate(2260px);
 -moz-transform: translate(2260px);
 -ms-transform: translate(2260px);
@@ -1349,6 +1343,13 @@ opacity: 1;
 
 .overview .slide-area {
 display: none;
+}
+slides > slide {
+background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
+background-color: white;
+}
+slides > slide {
+opacity: 0;
 }
 @media print {
 
@@ -3075,6 +3076,10 @@ if (document.readyState !== "loading" &&
       font-style: italic;
     }
 
+    summary {
+      display: list-item;
+    }
+
     slides > slide {
       -webkit-transition: all 0.4s ease-in-out;
       -moz-transition: all 0.4s ease-in-out;
@@ -3090,6 +3095,10 @@ if (document.readyState !== "loading" &&
       transition: opacity 0.6s ease-in 0.4s;
       opacity: 0;
     }
+/* https://github.com/ropensci/plotly/pull/524#issuecomment-468142578 */
+slide:not(.current) .plotly.html-widget{
+  display: block;
+}
 
   </style>
 
@@ -3121,19 +3130,19 @@ if (document.readyState !== "loading" &&
 
 <ul>
 <li>Granica górna: \[   \bar{x} + \frac{ z*\sigma}{ \sqrt{n}} \]</li>
-<li>Granica dolna: \[   \bar{x} - \frac{ z*\sigma}{ \sqrt{n}} \] z - graniczna wartość obszaru prawdopodobieństwa dla rozkładu normalnego standardowego (qnorm)<br/>x - średnia wartość zmiennej<br/>n - wielkość próby</li>
+<li>Granica dolna: \[   \bar{x} - \frac{ z*\sigma}{ \sqrt{n}} \] z - górna granica obszaru prawdopodobieństwa dla rozkładu normalnego standardowego (qnorm)<br/>x - średnia wartość zmiennej<br/>n - wielkość próby</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Dane</h2></hgroup><article  id="dane">
 
-<p>Importujemy dane cars.csv (dane dotyczą rynku motoryzacyjnego w USA)</p>
+<p>Importujemy dane <strong>cars.csv</strong> (dane dotyczą rynku motoryzacyjnego w USA)</p>
 
-<p><a href='http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv' title=''>http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv</a></p>
+<p><a href='http://wozniak2.github.io/bazy' title=''>http://wozniak2.github.io/bazy</a></p>
 
 <p>i wczytujemy do R</p>
 
 <pre class = 'prettyprint lang-r'>library(readr)
-cars &lt;- read_csv(&quot;~/googledrive/UAM/Stat/cw/cars.csv&quot;)</pre>
+cars &lt;- read_csv(&quot;cars.csv&quot;)</pre>
 
 <pre >## Parsed with column specification:
 ## cols(
@@ -3188,8 +3197,8 @@ s &lt;- sd(cars$price, na.rm = TRUE)</pre>
 
 n &lt;- length(cars$price) - sum(is.na = TRUE)
 
-# wartość graniczną z definiującą 0.95 obszar
-# prawdopodobieństwa dla rozkładu normalnego standardowego
+# górna granica definiująca 95% obszar prawdopodobieństwa
+# dla rozkładu normalnego standardowego
 
 z &lt;- qnorm(0.975, 0, 1)</pre>
 
@@ -3295,7 +3304,7 @@ UCL &lt;- P.hat + z * sqrt(P.hat * (1 - P.hat)/n)</pre>
 
 <pre class = 'prettyprint lang-r'>mean((p &gt;= LCL) &amp; (p &lt;= UCL))</pre>
 
-<pre >## [1] 0.92718</pre>
+<pre >## [1] 0.92701</pre>
 
 </article></slide><slide class=""><hgroup><h2>ZADANIE DOMOWE</h2></hgroup><article  id="zadanie-domowe">
 
