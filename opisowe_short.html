@@ -3194,16 +3194,25 @@ max(x)-min(x)</pre>
 
 <pre class = 'prettyprint lang-r'>wysokosc &lt;- c(2.1, 3.4, 2.5, 2.7, 2.9) ## zapisujemy dane
 srednica &lt;- c(0.3, 0.5, 0.6, 0.9, 1.1)
+
 vol &lt;- wysokosc * pi * (srednica / 2)^2 ## objętość
-sr &lt;- mean(vol) ## przyda nam sie srednia
-war &lt;- sum((vol - sr)^2)/length(vol) ## wariancja
-war</pre>
 
-<pre >## [1] 0.8642845</pre>
+sr &lt;- mean(vol) ## przyda nam sie srednia</pre>
 
-<pre class = 'prettyprint lang-r'>sqrt(war) ## sd to pierwiastek kwadratowy z wariancji</pre>
+</article></slide><slide class=""><hgroup><h2>Zadanie</h2></hgroup><article  id="zadanie-2">
 
-<pre >## [1] 0.929669</pre></article></slide>
+<pre class = 'prettyprint lang-r'>## wariancja
+war1 &lt;- sum((vol - sr)^2)/length(vol)
+war2 &lt;- sum((vol - sr)^2)/(length(vol) - 1)
+
+## sd to pierwiastek kwadratowy z wariancji
+sqrt(war1) </pre>
+
+<pre >## [1] 0.929669</pre>
+
+<pre class = 'prettyprint lang-r'>sqrt(war2)</pre>
+
+<pre >## [1] 1.039402</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
