@@ -10,8 +10,8 @@ Poznan, Poland
 
 - **computational social science:** social simulation, agent-based modeling
 - **labor economics:** migration at regional and local level, matching on the labor market, policy analysis
-- **network analysis** transportation systems, street network, accessibility
-- **geographic data science** data science applied to geographic problems and data
+- **network analysis:** transportation systems, street network, accessibility
+- **geographic data science:** data science applied to geographic problems and data
 
 ## Publications:
 
