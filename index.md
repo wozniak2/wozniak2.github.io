@@ -18,14 +18,12 @@ Poznan, Poland
 - **Wozniak, M.**, Filomena, G., Wronkowski, A., (2025). What’s your type? A taxonomy of pedestrian route choice behaviour in cities, Transportation Research Part F: Traffic Psychology and Behaviour,
 Volume 109, 2025, Pages 1257-1274,
 
-https://doi.org/10.1016/j.trf.2025.01.012
   [[PDF](https://doi.org/10.1016/j.trf.2025.01.012)] [[Code](https://doi.org/10.1016/j.trf.2025.01.012)] [[Project](https://doi.org/10.1016/j.trf.2025.01.012)]
 
 - **Wozniak, M.**, Radzimski, A., & Wajchman-Świtalska, S. (2025). Is More Always Better? Evaluating Accessibility to Parks and Forests in 33 European Cities Using Sustainable Modes of Transportation, 104,
 128656, https://doi.org/10.1016/j.ufug.2024.128656.
   
   [[PDF](https://doi.org/10.31219/osf.io/hcwgp)] [[Code](https://osf.io/wjqxs/)] [[Project](https://osf.io/wjqxs/)]
-
 
 - **Wozniak, M.** (2025). With just one tap. Network study of tweets dissemination during the war in Ukraine. Cogent Arts & Humanities, 12(1). https://doi.org/10.1080/23311983.2025.2451521
   
