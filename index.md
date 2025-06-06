@@ -10,9 +10,16 @@ Poznan, Poland
 
 - **computational social science:** social simulation, agent-based modeling
 - **labor economics:** migration at regional and local level, matching on the labor market, policy analysis
-- **spatial econometrics**
+- **network analysis** transportation systems, street network, accessibility
+- **geographic data science** data science applied to geographic problems and data
 
 ## Publications:
+
+- **Wozniak, M.**, Filomena, G., Wronkowski, A., (2025). What’s your type? A taxonomy of pedestrian route choice behaviour in cities, Transportation Research Part F: Traffic Psychology and Behaviour,
+Volume 109, 2025, Pages 1257-1274,
+
+https://doi.org/10.1016/j.trf.2025.01.012
+  [[PDF](https://doi.org/10.1016/j.trf.2025.01.012)] [[Code](https://doi.org/10.1016/j.trf.2025.01.012)] [[Project](https://doi.org/10.1016/j.trf.2025.01.012)]
 
 - **Wozniak, M.**, Radzimski, A., & Wajchman-Świtalska, S. (2025). Is More Always Better? Evaluating Accessibility to Parks and Forests in 33 European Cities Using Sustainable Modes of Transportation, 104,
 128656, https://doi.org/10.1016/j.ufug.2024.128656.
