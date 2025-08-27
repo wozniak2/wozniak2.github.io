@@ -15,6 +15,10 @@ Poznan, Poland
 
 ## Publications:
 
+- Filomena, G., **Wozniak, M.**, (2025). Navigating the Night: An Agent-Based Model of Nighttime Pedestrian Behaviour, AGILE GIScience Ser., 6, 21, https://doi.org/10.5194/agile-giss-6-21-2025.
+
+  [[PDF](https://doi.org/10.5194/agile-giss-6-21-2025)] [[Code](https://doi.org/10.1016/j.trf.2025.01.012)] [[Project](https://doi.org/10.1016/j.trf.2025.01.012)]
+
 - **Wozniak, M.**, Filomena, G., Wronkowski, A., (2025). What’s your type? A taxonomy of pedestrian route choice behaviour in cities, Transportation Research Part F: Traffic Psychology and Behaviour,
 Volume 109, 2025, Pages 1257-1274, https://doi.org/10.1016/j.trf.2025.01.012.
 
