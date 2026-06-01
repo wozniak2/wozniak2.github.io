@@ -14,7 +14,7 @@ Poznan, Poland
 - **labor economics:** migration at regional and local level, matching on the labor market, policy analysis
 
 ## Publications:
-- **Wozniak, M.**, Filomena, G., (2026). Beyond urban form: Introducing dynamic factors in agent-based simulations of pedestrian movement, Computers, Environment and Urban Systems, Volume 128, 102439.
+- **Wozniak, M.**, Filomena, G., (2026). Beyond urban form: Introducing dynamic factors in agent-based simulations of pedestrian movement, Computers, Environment and Urban Systems, Volume 128, 102439, https://doi.org/10.1016/j.compenvurbsys.2026.102439.
 
   [[PDF](https://doi.org/10.1016/j.compenvurbsys.2026.102439)] [[Code](https://github.com/wozniak2/Dynamic_Factors_Pedestrian_Model)] [[Project](https://github.com/wozniak2/Dynamic_Factors_Pedestrian_Model)]
 
